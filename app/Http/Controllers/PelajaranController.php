@@ -24,7 +24,7 @@ class PelajaranController extends Controller
             'nama_pelajaran' => $request->nama_pelajaran,
         ]);
         Session::flash('Pesan', 'Data berhasil di simpan!');
-        return redirect('/input/pelajaran');
+        return redirect('/pelajaran');
     }
 
     public function HapusPelajaranFunction($id_pelajaran) {

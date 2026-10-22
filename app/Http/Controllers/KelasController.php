@@ -24,7 +24,7 @@ class KelasController extends Controller
             'nama_kelas' => $request->nama_kelas,
         ]);
         Session::flash('Pesan', 'Data berhasil di simpan!');
-        return redirect('/input/kelas');
+        return redirect('/kelas');
     }
 
     public function HapusKelasFunction($id_kelas) {

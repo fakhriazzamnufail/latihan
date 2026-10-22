@@ -1,104 +1,59 @@
+<h1 align="center">LAPORAN HASIL BELAJAR SANTRI</h1>
+<h5 align="center">Pondok Pesantren Dar El-Ilmi</h5>
+<hr>
 
-<!-- HEADER -->
-<div class="judul">
-<h2>RAPOR SANTRI</h2>
-<p>PONDOK PESANTREN</p>
-<p>Tahun Ajaran 2025 / 2026</p>
+<table  width="100%">
+    <tr>
+        <td>Nama Santri</td>
+        <td align="left">:</td>
+        <td>{{ $rapor->first()->nama_santri}}</td><br>  
+        <td align="right">Jenis Kelamin</td>
+        <td align="right">:</td>
+        <TD align="right">{{$rapor->first()->jenis_kelamin}}</TD>
+    </tr>
+
+    <tr >
+        <td >ID Santri</td>
+        <td>:</td>
+        <td>{{$rapor->first()->id_santri}}</td><br>
+
+        <td align="right">No Telp</td>
+        <td align="right">:</td>
+        <td align="right">{{$rapor->first()->telp_santri}}</td>
+    </tr>    
+
+</table><br><br>
+
+
+<table  width="100%" border="1" >
+    <thead>
+        <tr>
+            <th>NO</th>
+            <th>Mapel</th>
+            <th>LAT.1</th>
+            <th>LAT.2</th>
+            <th>MID</th>
+            <th>UAS</th>
+            <th>RAPOR</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach($rapor as $n)
+        <tr>
+            <td>{{ $loop->iteration }}</td>
+            <td>{{ $n->nama_pelajaran}}</td>
+            <td>{{ $n->nilai_latihan1 }}</td>
+            <td>{{ $n->nilai_latihan2 }}</td>
+            <td>{{ $n->nilai_mid }}</td>
+            <td>{{ $n->nilai_uas }}</td>
+            <td>{{ $n->nilai_rapor }}</td>
+        </tr>
+        @endforeach
+    </tbody>
+</table><br><br><br><br>
+
+<div>
+    <p style="text-align: right">Wali Santri</p><br>
+
+    <p align="right"><strong>__________________________</strong></p>
 </div>
-
-<!-- BIODATA -->
-<table class="biodata">
-
-<tr>
-<td width="20%">Nama</td>
-<td width="2%">:</td>
-<td width="35%">{{ $santri->nama_santri }}</td>
-
-<td width="20%">Jenis Kelamin</td>
-<td width="2%">:</td>
-<td>{{ $santri->jenis_kelamin }}</td>
-</tr>
-
-<tr>
-<td>Tanggal Lahir</td>
-<td>:</td>
-<td>{{ $santri->tanggal_lahir }}</td>
-
-<td>Nomor Telp</td>
-<td>:</td>
-<td>{{ $santri->no_telp }}</td>
-</tr>
-
-<tr>
-<td>Alamat</td>
-<td>:</td>
-<td colspan="4">{{ $santri->alamat_santri }}</td>
-</tr>
-
-</table>
-
-<!-- TABEL NILAI -->
-<table class="nilai">
-
-<thead>
-<tr>
-<th width="8%">NO</th>
-<th>Mata Pelajaran</th>
-<th width="15%">KKM</th>
-<th width="20%">Nilai Angka</th>
-</tr>
-</thead>
-
-<tbody>
-
-@foreach($nilai as $n)
-<tr>
-
-<td>{{ $loop->iteration }}</td>
-
-<td style="text-align:left;">
-{{ $n->nama_pelajaran }}
-</td>
-
-<td>80</td>
-
-<td>
-{{ $n->nilai_uas }}
-</td>
-
-</tr>
-@endforeach
-
-</tbody>
-
-</table>
-
-<!-- TANDA TANGAN -->
-<table class="ttd">
-
-<tr>
-
-<td>
-Orang Tua / Wali
-<br><br><br><br>
-
-<span class="garis"></span>
-</td>
-
-<td>
-Payakumbuh, {{ date('d F Y') }}
-<br>
-Wali Kelas
-<br><br><br><br>
-
-<span class="garis"></span>
-</td>
-
-</tr>
-
-</table>
-
-</body>
-</html>
-
-CetakRapor.blade.php

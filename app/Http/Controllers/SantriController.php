@@ -23,10 +23,13 @@ class SantriController extends Controller
         $santri = SantriModel::create([
             'nama_santri' => $request->nama_santri,
             'alamat_santri' => $request->alamat_santri,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'telp_santri' => $request->telp_santri
         ]);
 
         Session::flash('Pesan', 'Data berhasil di simpan!');
-        return redirect('/inputsantri');
+        return redirect('/santri');
     }
 
     public function HapusSantriFunction($id_santri) {
@@ -50,6 +53,9 @@ class SantriController extends Controller
         ->update([
             'nama_santri' => $request->nama_santri,
             'alamat_santri' => $request->alamat_santri,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'telp_santri' => $request->telp_santri
         ]);
         Session::flash('Pesan', 'Data berhasil di ubah!');
         return redirect('/santri');

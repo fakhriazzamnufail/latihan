@@ -23,7 +23,13 @@
 
 
 <div class="col-md-12">
+<center>
+        
+        @if(session('Pesan'))
+        {!! session('Pesan')!!}
+        @endif
 
+    </center>
     <a class="btn btn-sm btn-primary" href="/inputpengajar">Input_Pengajar</a><br><br>
     <a href="/home">Home</a><br><br>
     <table id="example1" class="table table-bordered table-striped">

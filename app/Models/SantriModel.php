@@ -11,6 +11,6 @@ class SantriModel extends Model
 
     protected $table = 'tb_santri';
     protected $primaryKey = 'id_santri';
-    protected $fillable = ['nama_santri','alamat_santri'];
+    protected $fillable = ['nama_santri','jenis_kelamin', 'tanggal_lahir', 'alamat_santri', 'telp_santri'];
 
 }

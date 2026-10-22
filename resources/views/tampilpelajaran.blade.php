@@ -18,6 +18,10 @@
 
 <div class="col-md-12">
     
+        @if(session('Pesan'))
+        {!! session('Pesan')!!}
+        @endif
+        <br><br><br>
 
         <a class="btn btn-sm btn-primary" href="/input/pelajaran">Input_Pelajaran</a><br>
         <a href="/home">Home</a><br><br>

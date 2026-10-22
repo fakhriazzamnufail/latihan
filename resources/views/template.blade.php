@@ -256,6 +256,14 @@
                   Nilai
                 </p>
               </a>
+            </li>            
+            <li class="nav-item">
+              <a href="{{url('/rapor')}}" class="nav-link">
+                <i class="nav-icon fas fa-book-open"></i>
+                <p>
+                  Rapor
+                </p>
+              </a>
             </li>
             <li class="nav-header">LOG OUT</li>
             <li class="nav-item">

@@ -9,6 +9,7 @@ use App\Http\Controllers\PelajaranController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\NilaiController;
+use App\Http\Controllers\RaporController;
 
 
 
@@ -80,3 +81,16 @@ Route::get('/nilai/cetak', [NilaiController::class, 'CetakNilaiFunction'])->midd
 Route::get('/nilai/hapus/{id_nilai}', [NilaiController::class, 'HapusNilaiFunction'])->middleware('auth');
 Route::get('/nilai/edit/{id_nilai}', [NilaiController::class, 'EditNilaiFunction'])->middleware('auth');
 Route::post('/nilai/update', [NilaiController::class, 'UpdateNilaiFunction'])->middleware('auth');
+
+//rapor
+Route::get('/rapor', [RaporController::class, 'TampilRaporFunction'])->middleware('auth');
+Route::get('/rapor/cetak/{id_santri}', [RaporController::class, 'CetakRaporFunction'])->middleware('auth');
+
+
+
+
+
+
+
+
+

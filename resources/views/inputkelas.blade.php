@@ -23,9 +23,7 @@
 
 
     
-    @if(session('Pesan'))
-    {!! session('Pesan')!!}
-    @endif
+
     <br>
 
     <div class="card card-info">

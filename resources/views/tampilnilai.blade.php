@@ -64,7 +64,8 @@
                 <td>{{$n->nilai_rapor}}</td>
                 <td>
                     <a href="/nilai/edit/{{$n->id_nilai}}" class="btn btn-xs btn-success"><i class="fas fa-edit"></i></a>
-                    <a href="/nilai/hapus" class="btn btn-xs btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="fas fa-trash"></i></a>
+                    <a href="/nilai/hapus/{{$n->id_nilai}}" class="btn btn-xs btn-danger" onclick="return confirm('Yakin ingin menghapus data ini?')"><i class="fas fa-trash"></i></a>
+                    <a class="btn btn-sm btn-warning" target="_blank" href="/nilai/cetak"><i class="nav-icon fas fa-print"></i> Cetak Nilai</a>
                 </td>
             </tr>
             @endforeach

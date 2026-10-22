@@ -86,8 +86,44 @@ class NilaiController extends Controller
 
     function EditNilaiFunction($id_nilai)
     {
-        return $nilai = NilaiModel::select('*')
+        $santri = SantriModel::select('id_santri', 'nama_santri')
+            ->get();
+
+        $pengajar = PengajarModel::select('id_pengajar', 'nama_pengajar')
+            ->get();
+
+        $kelas = KelasModel::select('id_kelas', 'nama_kelas')
+            ->get();
+
+        $mapel = PelajaranModel::select('id_pelajaran', 'nama_pelajaran')
+            ->get();
+            
+        $nilai = NilaiModel::select('*')
             ->where('id_nilai', $id_nilai)
             ->first();
+            
+        return view('editnilai', compact('santri', 'pengajar', 'kelas', 'mapel', 'nilai'));
     }
+    function UpdateNilaiFunction(Request $request)
+    {
+        
+        //nilai rapor = 40% latihan + 25% mid + 35% uas
+        $rapor = ((($request->nilai_latihan1+$request->nilai_latihan2)/2)*0.4)+
+        ($request->nilai_mid*0.25)+
+        ($request->nilai_uas*0.35);
+        $nilai = NilaiModel::where('id_nilai', $request->id_nilai)
+            ->update([
+            'id_santri'         =>$request->id_santri,
+            'id_pengajar'       =>$request->id_pengajar,
+            'id_kelas'          =>$request->id_kelas,
+            'id_pelajaran'      =>$request->id_pelajaran,
+            'nilai_latihan1'    =>$request->nilai_latihan1,
+            'nilai_latihan2'    =>$request->nilai_latihan2,
+            'nilai_mid'         =>$request->nilai_mid,
+            'nilai_uas'         =>$request->nilai_uas,
+            'nilai_rapor'       =>$rapor,
+        ]);
+        return redirect('/nilai');
+    }
+    
 }

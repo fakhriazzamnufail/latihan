@@ -17,13 +17,7 @@
 
 @section('isi')
 <div class="col-md-12">
-    <center>
-        
-        @if(session('Pesan'))
-        {!! session('Pesan')!!}
-        @endif
 
-    </center>
 
     <div class="card card-info">
         <div class="card-header">
@@ -41,10 +35,27 @@
                             placeholder="Nama Santri">
                     </div>
                 </div><br><br>
+                <label>Jenis Kelamin</label>
+                <select name="jenis_kelamin" required>
+                    <option>Jenis Kelamin</option>
+                    <option value="Laki-Laki">Laki-Laki</option>
+                    <option value="Perempuan">Perempuan</option>
+                </select>
+                <br><br>
+                <label>Tanggal Lahir</label>
+                <input type="date" name="tanggal_lahir" required>
+                <br><br>
                 <div class="form-group row">
                     <label for="inputEmail3" class="col-sm-2 col-form-label">Alamat </label>
                     <div class="col-sm-10">
                         <input name="alamat_santri" required type="text" name="nama_kelas" required class="form-control"
+                            id="inputEmail3" placeholder="Alamat">
+                    </div>
+                </div><br><br>
+                <div class="form-group row">
+                    <label for="inputEmail3" class="col-sm-2 col-form-label">No Hp </label>
+                    <div class="col-sm-10">
+                        <input name="telp_santri" required type="text" name="telp_santri" required class="form-control"
                             id="inputEmail3" placeholder="Alamat">
                     </div>
                 </div><br><br>

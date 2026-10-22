@@ -21,6 +21,13 @@
 <!-- Main content -->
 @section('isi') 
 <div class="col-md-12">
+    <center>
+
+        @if(session('Pesan'))
+        {!! session('Pesan')!!}
+        @endif
+
+    </center>
 
     <a class="btn btn-sm btn-primary" href="/inputsantri">Input Santri</a>
     <br><br>
@@ -37,7 +44,10 @@
                 <td>NO</td>
                 <td>ID SANTRI</td>
                 <td>NAMA SANTRI</td>
+                <td>JENIS KELAMIN</td>
+                <td>TANGGAL LAHIR</td>
                 <td>ALAMAT SANTRI</td>
+                <td>TELEPON SANTRI</td>
                 <td>AKSI</td>
             </tr>
         </thead>
@@ -47,7 +57,10 @@
                 <td>{{ $loop->iteration }}</td>
                 <td>{{ $s->id_santri }}</td>
                 <td>{{ $s->nama_santri }}</td>
+                <td>{{ $s->jenis_kelamin}}</td>
+                <td>{{ $s->tanggal_lahir}}</td>
                 <td>{{ $s->alamat_santri }}</td>
+                <td>{{ $s->telp_santri }}</td>
                 <center>
                     <td align="center">
                         <a class="btn btn-warning" href="/santri/edit/{{$s->id_santri}}"><i class="fa fa-edit"></i></a>
@@ -102,3 +115,11 @@
     </table>
 </body>
 </html> -->
+
+
+
+
+
+
+
+

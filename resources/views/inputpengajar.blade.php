@@ -19,13 +19,7 @@
 @section('isi')
 <!-- Main content -->
 <div class="col-md-12">
-<center>
-        
-        @if(session('Pesan'))
-        {!! session('Pesan')!!}
-        @endif
 
-    </center>
 
     <div class="card card-info">
         <div class="card-header">

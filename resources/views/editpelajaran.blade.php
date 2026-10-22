@@ -37,7 +37,7 @@
                 </div><br><br>
 
                 <div class="card-footer">
-                    <button type="submit" class="btn btn-info">Input</button>
+                    <button type="submit" class="btn btn-info">Edit</button>
                     <a href="{{url('/pelajaran')}}" class="btn btn-default float-right">Cancel</a>
                 </div>
                 <!-- /.card-footer -->

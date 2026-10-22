@@ -28,7 +28,7 @@ class PengajarController extends Controller
 
         Session::flash('Pesan', 'Data berhasil di simpan!');
 
-        return redirect('/inputpengajar');
+        return redirect('/pengajar');
     }
 
     public function HapusPengajarFunction($id_pengajar) {

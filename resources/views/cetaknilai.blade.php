@@ -5,14 +5,13 @@
         <thead>
             <tr>
                 <td>NO</td>
-
                 <td>SANTRI</td>
                 <td>PENGAJAR</td>
                 <td>KELAS</td>
                 <td>PELAJARAN</td>
                 <td>LAT.1</td>
                 <td>LAT.2</td>
-                <td>MID</td>
+                <td>MID semesteer</td>
                 <td>UAS</td>
                 <td>RAPOR</td>
 
